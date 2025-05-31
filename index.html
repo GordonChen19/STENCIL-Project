@@ -25,7 +25,6 @@
 
 
   <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -56,26 +55,26 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Gordon Chen</a><sup>*</sup>,</span>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Gordon Chen</a><sup>1,2</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Ziqi Huang</a><sup>*</sup>,</span>
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Ziqi Huang</a><sup>1</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Cheston Tan</a><sup>*</sup>,</span>
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Cheston Tan</a><sup>2</sup>,</span>
                   </span>
                   <span class="author-block">
-                    <a href="FOURTH AUTHOR PERSONAL LINK" target="_blank">Ziwei Liu</a>
+                    <a href="FOURTH AUTHOR PERSONAL LINK" target="_blank">Ziwei Liu</a><sup>1</sup>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Nanyang Technological University, A*STAR<br>IEEE ICIP 2025</span>
+                    <span class="author-block">Nanyang Technological University, CFAR IHPC A*STAR<br>IEEE ICIP 2025</span>
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                      <a href="static/pdfs/chen.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -86,7 +85,7 @@
 
                     <!-- Supplementary PDF link -->
                     <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      <a href="static/pdfs/Stencil - Supplementary Materials.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
@@ -131,12 +130,17 @@
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
         <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
+        <source src="static/videos/Presentation.mp4"
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
+       (a) Cross-Attention Guided Loss. We fine-tune a lightweight text-to-image diffusion model
+on the reference image(s) of the subject. The Cross-Attention Guided Loss is applied so that gradients are computed only in
+regions influenced by the subject token (e.g. “toy robot”). (b) Context Guidance. At inference, given a user prompt, we draft an image with
+a large frozen text-to-image model. The draft is inverted into the latent space of the lightweight fine-tuned model and refined
+via null-text optimisation, producing the final image that preserves both the prompt context and the personalized subject. This allows us to generate images with
+rich contextual priors injected from a large diffusion model, without the computational cost of fine-tuning on the same large-scale models that are capable of producing them. 
+
     </div>
   </div>
 </section>
@@ -150,7 +154,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Recent text-to-image diffusion models can produce impressive visuals from textual prompts, but they struggle to reproduce the same subject consistently across multiple generations or contexts. Existing fine-tuning based methods for subject-driven generation face a trade-off between quality and efficiency. Fine-tuning larger models yield higher-quality images but is computationally expensive, while fine-tuning smaller models is more efficient but compromises image quality. To this end, we present Stencil. Stencil resolves this trade-off by leveraging the superior contextual priors of large models and efficient fine-tuning of small models. Stencil uses a small model for fine-tuning while a large pre-trained model provides contextual guidance during inference,  injecting rich priors into the generation process with minimal overhead. Stencil excels at generating high-fidelity, novel renditions of the subject in less than a minute, delivering state-of-the-art performance and setting a new benchmark in subject-driven generation. 
           </p>
         </div>
       </div>
@@ -167,32 +171,25 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/cyberpunk.png" alt="MY ALT TEXT"  style="display: block; margin: 0 auto;"/>
         <h2 class="subtitle has-text-centered">
-          First image description.
+          A dog in a crowded cyberpunk city on a rainy day.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/supercat.png" alt="MY ALT TEXT"  style="display: block; margin: 0 auto;"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
+          A cat wearing a Superman costume, striking a heroic pose in a city.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/lantern.png" alt="MY ALT TEXT"  style="display: block; margin: 0 auto;"/>
         <h2 class="subtitle has-text-centered">
-         Third image description.
+         A dog in front of thousands of floating lanterns in the night sky.
        </h2>
      </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
   </div>
 </div>
 </div>
@@ -201,79 +198,35 @@
 
 
 
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
 <!-- Video carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
+      <h2 class="title is-3">Applications</h2>
+            
+      <div class="content">
+        <h3 class="subtitle" style="text-align: center;">Age Progression/Regression</h3>
+        <img src="static/images/application/Age.png" width="100%">
+      
+        <h3 class="subtitle" style="text-align: center;">Accessorization</h3>
+        <img src="static/images/application/Costumes.png" width="100%">
+
+        <h3 class="subtitle" style="text-align: center;">Expression Editing</h3>
+        <img src="static/images/application/Expression.png" width="100%">
+
+        <h3 class="subtitle" style="text-align: center;">Perspective-Conditioned Generation</h3>
+        <img src="static/images/application/Perspective.png" width="100%">
+
+        <h3 class="subtitle" style="text-align: center;">Pose Editing</h3>
+        <img src="static/images/application/Pose.png" width="100%">
+
+        <h3 class="subtitle" style="text-align: center;">Style Transfer</h3>
+        <img src="static/images/application/Style.png" width="100%">
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
 
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
 
 
 <!--BibTex citation -->
@@ -292,11 +245,7 @@
       <div class="column is-8">
         <div class="content">
 
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
+
 
         </div>
       </div>
